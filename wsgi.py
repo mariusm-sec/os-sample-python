@@ -27,6 +27,9 @@ def show_fibonnaci_number(num):
     except ValueError as e:
         return jsonify({'input': num, 'error': str(e), 'number': None}), 400
 
+@application.route('/cache')
+def show_cache():
+    return jsonify(fib.cache())
 
 if __name__ == "__main__":
     application.run()
